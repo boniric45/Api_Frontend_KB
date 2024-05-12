@@ -1,0 +1,55 @@
+<mat-toolbar class="toolbar">
+
+    <!-- Toolbar -->
+    <button 
+        (click)="drawer.toggle()"
+        mat-icon-button
+        class="burger">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <span class="logo"  >
+        <img [src]="logo"/>       
+    </span>
+  
+</mat-toolbar>
+
+<mat-drawer-container 
+class="container" 
+[hasBackdrop]="mdcBackdrop">
+<mat-drawer #drawer class="drawer"  [mode]="drawerMode">
+    <div class="sidenav-content">
+
+        <div class="drawerButton">
+            <button mat-icon-button
+                (click)="drawer.toggle()"
+                routerLink="home">
+                <mat-icon>home</mat-icon>
+            </button>
+            <div class="txtfab">Home</div>
+        </div>
+
+        <div class="drawerButton">
+            <button mat-icon-button
+                (click)="drawer.toggle()"
+                routerLink="content">
+                <mat-icon>bug_report</mat-icon>
+            </button>
+            <div class="txtfab">Content</div>
+        </div>
+
+        <div class="drawerButton">
+            <button mat-icon-button
+                (click)="drawer.toggle()"
+                routerLink="content">
+                <mat-icon>security</mat-icon>
+            </button>
+            <div class="txtfab">Admin</div>
+        </div>
+
+    </div>
+</mat-drawer>
+<mat-drawer-content>
+    <router-outlet></router-outlet>
+</mat-drawer-content>
+</mat-drawer-container>
