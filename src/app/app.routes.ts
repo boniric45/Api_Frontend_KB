@@ -1,11 +1,14 @@
 import { Routes } from '@angular/router';
-import { ContentComponent } from './content/content.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
+import { AdminKbComponent } from './components/admin-kb/admin-kb.component';
+import { FunctionalityComponent } from './components/functionality/functionality.component';
+import { DocumentationComponent } from './components/documentation/documentation.component';
 
 export const routes: Routes = 
 [
-{path: 'content', component: ContentComponent},
 {path:'home', component: HomeComponent},
+{path:'functionality', component: FunctionalityComponent},
+{path:'documentation', component: DocumentationComponent},
+{path:'admin',component: AdminKbComponent},
 {path: '', redirectTo:'/home', pathMatch:'full'}
-
 ];

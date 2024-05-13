@@ -1,16 +1,26 @@
 <mat-toolbar class="toolbar">
 
-    <!-- Toolbar -->
     <button 
         (click)="drawer.toggle()"
         mat-icon-button
         class="burger">
         <mat-icon>menu</mat-icon>
     </button>
+    
+    <div class="title">
+  
+    <div class="titles">
+        <a>Base de connaissance</a>
+    </div>
 
-    <span class="logo"  >
-        <img [src]="logo"/>       
-    </span>
+    <div class="logo">
+        <img [src]="logo"/>
+    </div>
+</div>
+
+
+
+
   
 </mat-toolbar>
 
@@ -32,20 +42,31 @@ class="container"
         <div class="drawerButton">
             <button mat-icon-button
                 (click)="drawer.toggle()"
-                routerLink="content">
-                <mat-icon>bug_report</mat-icon>
+                routerLink="admin">
+                <mat-icon>security</mat-icon>
             </button>
-            <div class="txtfab">Content</div>
+            <div class="txtfab">Admin</div>
         </div>
 
         <div class="drawerButton">
             <button mat-icon-button
                 (click)="drawer.toggle()"
-                routerLink="content">
+                routerLink="functionality">
+                <mat-icon>bug_report</mat-icon>
+            </button>
+            <div class="txtfab">Fonctionnalités</div>
+        </div>
+
+        <div class="drawerButton">
+            <button mat-icon-button
+                (click)="drawer.toggle()"
+                routerLink="documentation">
                 <mat-icon>security</mat-icon>
             </button>
-            <div class="txtfab">Admin</div>
+            <div class="txtfab">Documentations</div>
         </div>
+
+
 
     </div>
 </mat-drawer>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -7,12 +7,13 @@ import {MatDrawerMode, MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import { BooleanInput } from '@angular/cdk/coercion';
 import {BreakpointObserver} from '@angular/cdk/layout';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, RouterLink, RouterLinkActive,
-    MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule
+    MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule,HttpClientModule
     ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -25,10 +26,9 @@ export class AppComponent {
   readonly breakpoint$ = this.breakpointObserver
   .observe([ '(max-width: 500px)']);
 
-  constructor(private breakpointObserver: BreakpointObserver) {
-    this.breakpoint$.subscribe(() =>
-      this.breakpointChanges()
-  );
+  constructor(private breakpointObserver: BreakpointObserver) 
+  {
+    this.breakpoint$.subscribe(() => this.breakpointChanges());
   }
 
   breakpointChanges(): void {
@@ -42,5 +42,6 @@ export class AppComponent {
     }
     
   }
+
 
 }
