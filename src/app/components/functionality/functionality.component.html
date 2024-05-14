@@ -1,1 +1,18 @@
-<p>functionality works!</p>
+
+
+<div class="content">
+    <div class="row">
+        <div *ngFor="let functionality of functionalitys" class="col-md-6 col-xl-3"> 
+    <div class="col-3">
+        <div class="card" style="width: 14rem;">
+          <img class="card-img-top" src="../assets/img/logo_uegar.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><h2>{{functionality.wording}}</h2></h5>
+            <p class="card-text"></p>
+            <div><a href="#" class="btn btn-primary pull-right">{{functionality.id}}</a></div>
+          </div>
+        </div>
+     </div>
+</div>
+
+

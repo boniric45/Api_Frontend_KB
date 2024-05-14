@@ -1,14 +1,33 @@
 .toolbar {
-
     height:200px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(75, 100, 133, 1) 0px -3px 0px inset;
+}
+
+.drawer-content{
+    width: 1500px;
 }
 
 .biggerbutton {
     width:  150px!important;
     height: 100px!important;
     font-size: 30px!important;
+}
+
+.drawer {
+    margin: 0px;
+    padding: 0px;
+    background-color:rgb(75, 100, 133);
+    width: 276px;
+    height: auto;
+
+}
+
+.container {
+    margin:0px;
+    padding: 0px;
+    margin-top: 15px;
+    background-color: white;
 }
 
 .toolBarButton, .drawerButton {
@@ -26,6 +45,7 @@
     color: rgb(255, 156, 0);
 }
 
+
 .txtfab{
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 font-size: 16px;
@@ -33,15 +53,6 @@ font-style: italic;
 color: black;
 }
 
-
-.container {
-    height: 100%;
-}
-
-.drawer {
-    background-color:rgb(75, 100, 133);
-    width: 285px; 
-}
 
 .burger {
     margin: 2%;
@@ -54,22 +65,18 @@ color: black;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-}
-.titles {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2rem;
     font-style: italic;
 }
+
 
 .logo{
     margin: 0 auto;
     transform: scale(0.45);
 }
 
-
-
-
-@media all and (max-width: 500px) {
+@media all and (max-width: 780px) {
 
     .toolBarButton, .logo{
         display: none;
@@ -102,7 +109,6 @@ color: black;
     .toolbar {
         height:7%;
     }
-
 
     .container {
         height: 93%;

@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class AdminKbComponent implements OnInit {
 
   ngOnInit(): void {
-      window.location.href = 'http://localhost:1111';
+      window.open('http://localhost:1111', '_blank')
   }
 
 

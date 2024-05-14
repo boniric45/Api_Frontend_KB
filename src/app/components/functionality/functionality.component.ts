@@ -7,15 +7,19 @@ import { LinkQr } from '../../models/link-qr';
 import { QuestionService } from '../../services/question.service';
 import { LinkQrService } from '../../services/link-qr.service';
 import { ResponseService } from '../../services/response.service';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-functionality',
   standalone: true,
-  imports: [],
+  imports: [MatButtonModule,MatCardModule,CommonModule],
   templateUrl: './functionality.component.html',
   styleUrl: './functionality.component.scss'
 })
 export class FunctionalityComponent implements OnInit {
+
 
   constructor
   (
@@ -26,9 +30,7 @@ export class FunctionalityComponent implements OnInit {
   ){}
  
   ngOnInit(): void {
-
-    console.log(this.getQuestionById(1));
-
+    this.getFunctionalitys();
   }
 
   public functionalitys!:Functionality[];
@@ -39,18 +41,21 @@ export class FunctionalityComponent implements OnInit {
   public response!: Response;
   public linkQrs!:LinkQr[];
   public linkQr!: LinkQr;
+  public idFunctionality!: number;
 
   // get all functionality
   getFunctionalitys() {
     this.functionalitySvc.getAllFunctionality().subscribe((result)=> {
       this.functionalitys = result;
+      console.log(this.functionalitys);
       });
     }
 
   // Get one documentation with id
   getFunctionalityById(id:any){
-    this.functionalitySvc.getFunctionalityById(id).subscribe((result)=> {
+    this.functionalitySvc.getFunctionalityById(this.idFunctionality).subscribe((result)=> {
       this.functionality = result;
+      console.log(result);
       });
     }
 
@@ -65,7 +70,7 @@ export class FunctionalityComponent implements OnInit {
   getQuestionById(id:any){
     this.questionSvc.getQuestionById(id).subscribe((result)=> {
       this.question = result;
-      console.log(this.question);
+
       });
     }
 
@@ -80,6 +85,7 @@ export class FunctionalityComponent implements OnInit {
   getResponseById(id:any){
     this.responseSvc.getResponseById(id).subscribe((result)=> {
       this.response = result;
+      console.log(this.response);
       });
     }
 

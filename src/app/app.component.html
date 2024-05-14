@@ -1,3 +1,5 @@
+
+<!--  Toolbar top -->
 <mat-toolbar class="toolbar">
 
     <button 
@@ -8,8 +10,7 @@
     </button>
     
     <div class="title">
-  
-    <div class="titles">
+    <div>
         <a>Base de connaissance</a>
     </div>
 
@@ -17,19 +18,13 @@
         <img [src]="logo"/>
     </div>
 </div>
-
-
-
-
-  
 </mat-toolbar>
 
-<mat-drawer-container 
-class="container" 
-[hasBackdrop]="mdcBackdrop">
-<mat-drawer #drawer class="drawer"  [mode]="drawerMode">
-    <div class="sidenav-content">
 
+<mat-drawer-container class="container" [hasBackdrop]="mdcBackdrop">
+<mat-drawer #drawer class="drawer"  [mode]="drawerMode">
+
+    <div class="sidenav-content">
         <div class="drawerButton">
             <button mat-icon-button
                 (click)="drawer.toggle()"
@@ -61,16 +56,16 @@ class="container"
             <button mat-icon-button
                 (click)="drawer.toggle()"
                 routerLink="documentation">
-                <mat-icon>security</mat-icon>
+                <mat-icon>library_books</mat-icon>
             </button>
             <div class="txtfab">Documentations</div>
         </div>
-
-
-
     </div>
 </mat-drawer>
-<mat-drawer-content>
-    <router-outlet></router-outlet>
+
+<mat-drawer-content class="drawer-content" style="width: 100%;height: 100%" >
+    <router-outlet ></router-outlet>
 </mat-drawer-content>
+
 </mat-drawer-container>
+
